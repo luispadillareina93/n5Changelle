@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using n5.permissions.Application.Commands;
 using n5.permissions.Application.Dto;
@@ -19,6 +20,13 @@ namespace n5.permissions.IntegrationTest
         private readonly HttpClient _httpClient;
         public PermissionIntegrationTest()
         {
+            var configuration = new ConfigurationBuilder()
+                                .SetBasePath(Directory.GetCurrentDirectory()) 
+                                .AddJsonFile("appsettings.json")      
+                                .Build();
+
+            var conectionString = configuration["ConnectionStrings:Default"];
+
             var app = new WebApplicationFactory<Program>().WithWebHostBuilder(builder =>
             {
                 builder.ConfigureServices(services =>
@@ -26,13 +34,10 @@ namespace n5.permissions.IntegrationTest
                     var descriptor = services.SingleOrDefault(
                                d => d.ServiceType ==
                                    typeof(DbContextOptions<PermissionsDbContext>));
-
                     services.Remove(descriptor);
-
-
-                  services.AddDbContext<PermissionsDbContext>(options =>
-                        options.UseSqlServer("Server=localhost; Database=PermissionDbTest ;User ID=sa;Password=sa;TrustServerCertificate=True")
-                       );
+                    services.AddDbContext<PermissionsDbContext>(options =>
+                          options.UseSqlServer(conectionString)
+                         );
 
                 });
 
