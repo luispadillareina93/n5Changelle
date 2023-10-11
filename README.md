@@ -46,3 +46,10 @@ El proyecto de pruebas de integración (n5.permissions.IntegrationTest) de nuest
 "ConnectionStrings": {
     "Default": "Server=localhost; Database=PermissionTestDb ;User ID=sa;Password=sa;TrustServerCertificate=True"
   }
+```
+## Configuración de FrontEnd
+En el proyecto ReactJs se debe configurar el API en la ruta src/api. La configuración se realiza con la url Base.El ejemplo siguiente:
+
+```
+ baseURL:'https://localhost:44340/api'
+```
