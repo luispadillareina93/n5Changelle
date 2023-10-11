@@ -1,0 +1,22 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/backEnd/n5.permissions/.vs
+/backEnd/n5.permissions/n5.permissions/bin
+/backEnd/n5.permissions/n5.permissions/obj
+/backEnd/n5.permissions/n5.permissions.Application/bin
+/backEnd/n5.permissions/n5.permissions.Application/obj
+/backEnd/n5.permissions/n5.permissions.ApplicationTest/bin
+/backEnd/n5.permissions/n5.permissions.ApplicationTest/obj
+/backEnd/n5.permissions/n5.permissions.Domain/bin
+/backEnd/n5.permissions/n5.permissions.Domain/obj
+/backEnd/n5.permissions/n5.permissions.Infraestructure/bin
+/backEnd/n5.permissions/n5.permissions.Infraestructure/obj
+/backEnd/n5.permissions/n5.permissions.IntegrationTest/bin
+/backEnd/n5.permissions/n5.permissions.IntegrationTest/obj
+/backEnd/n5.permissions/n5.permissions.Test/bin/Debug/net7.0
+/backEnd/n5.permissions/n5.permissions.Test/obj
+/frontEnd/permission-app/build
+/frontEnd/permission-app/node_modules
+/frontEnd/permission-app/node_modules
