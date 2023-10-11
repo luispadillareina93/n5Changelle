@@ -39,3 +39,10 @@ Ejemplo:
     "Topic": "permissions-topic"
 }
 ```
+## Configuración de `appsettings` para Pruebas de Integración
+
+El proyecto de pruebas de integración (n5.permissions.IntegrationTest) de nuestra aplicación requiere una configuración específica para ejecutar pruebas que interactúen con los componentes del sistema. Para lograr esto, debe configurar la sección ConnectionStrings:
+```json
+"ConnectionStrings": {
+    "Default": "Server=localhost; Database=PermissionTestDb ;User ID=sa;Password=sa;TrustServerCertificate=True"
+  }
