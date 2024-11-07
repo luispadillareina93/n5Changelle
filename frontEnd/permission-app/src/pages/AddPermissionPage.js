@@ -17,7 +17,7 @@ function AddPermission() {
 
   return (
     <div className='container'>
-      <h1>Formulario de Permiso</h1>
+      <h1>Formulario de Permiso Test</h1>
       <PermissionsForm onSubmit={handleSubmit} />
     </div>
   );
